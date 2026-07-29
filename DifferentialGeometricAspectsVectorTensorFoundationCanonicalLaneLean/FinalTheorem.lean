@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import DifferentialGeometricAspectsVectorTensorFoundationCanonicalLaneLean.ConnectionAndHolonomy
+import DifferentialGeometricAspectsVectorTensorFoundationCanonicalLaneLean.CurvatureInvariants
+import DifferentialGeometricAspectsVectorTensorFoundationCanonicalLaneLean.IndexTheorems
+
+namespace HautevilleHouse
+namespace DifferentialGeometricAspectsVectorTensorFoundationCanonicalLaneLean
+
+def ConstrainedDifferentialGeometryClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_differential_geometry_endgame (A : AdmissibleClass) :
+    ConstrainedDifferentialGeometryClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DifferentialGeometricAspectsVectorTensorFoundationCanonicalLaneLean
+end HautevilleHouse
